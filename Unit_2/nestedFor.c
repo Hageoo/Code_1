@@ -13,9 +13,8 @@ int main(int argc, char** argv){
 
         for ( int j = 2; j< atoi(argv[2]); j++){
             printf("\tj: %d\n", j);
-            sleep(1000);
+            sleep(500);
         }
-    };
-
+    }
     return 0;
 }
