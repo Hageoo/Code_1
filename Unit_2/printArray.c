@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void print_array(int array[3],int arr){ 
-    //len 
+    
     int i = 0;
     printf("{"); 
     //se empieza a imprimir
