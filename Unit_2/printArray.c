@@ -1,20 +1,25 @@
 #include <stdio.h>
-//printArray(nombre del arreglo, tamaño del arreglo); con while
+
+void print_array(int array[3],int arr){ 
+    //len 
+    int i = 0;
+    printf("{"); 
+    //se empieza a imprimir
+    while (i < arr){
+        printf("%d",array[i]);
+        if (i < arr-1){
+            printf(",");
+        }
+        i = i + 1; 
+        //index = i, es más sencillo trabajar con i que con index
+    }
+    printf("}\n");
+}
 
 int main(){
-    int myArray[3]={5, 2, 3};
-    int i = 0;
-    printf("[");
-    void printArray(int myArray[3], int arrayLenght){
-        while (i < 3){
-            printf ("%d", myArray[i]);
-            if (i < 2){
-                printf(",");
-            }
-            i++;
-        }
-    }
-    printArray (myArray, 3);
-    printf("]\n");
+    int arr = 3;
+    int array [3] = {5, 2, 3};
+    print_array(array,3);
     return 0;
-}
+    //las funciones void siempre se pueden usar para repetir codigo en caso de que sea necesario, es considerado mala prácica repetir código de manera innecesaria
+    }
