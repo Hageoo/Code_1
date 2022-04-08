@@ -5,22 +5,24 @@
 
 //function
 
-int greatest(int array[], int length){ //defining the function that we will be calling later on the code
-
-    int great;
-
-    for (int index = 0; index < length - 1; index++)
+int greatest(int array[], int length)  //defining the function that we will be calling later on the code
+{ 
+    for (int i = 0; i < length; i++)
     {
-        if (array[index] > array[index + 1])
+        for (int x = 0; x < length - 1; x++)
         {
-            great = array[index];
-        }
-        else
-        {
-            great = array[index + 1];
+            if(array[x] > array[x + 1])
+            {
+                int temp = array[x];
+                array[x] = array[x + 1];
+                array[x + 1] = temp;
+            }
         }
     }
-    return great;
+     int greatest = array[length - 1];
+        
+    return greatest;
+   
 }
 
 int main(){
@@ -31,7 +33,7 @@ int main(){
 
     printf("Please type in the values of each component of the array (3 numbers): \n");
 
-    scanf("%i %i %i", &array[0], &array[1], &array[2]); //taking the values for each component in the array from the user 
+    scanf("%i%i%i", &array[0], &array[1], &array[2]); //taking the values for each component in the array from the user 
 
     int BigValue = greatest(array, lenght); //calling the function and passing the variables to it
 
