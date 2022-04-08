@@ -1,5 +1,19 @@
 #include <stdio.h>
 
+/*
+examen de código: estudiar; 
+
+Arrays
+	
+Bucles (Fors)
+	
+If, else, else if
+	
+argv, argc
+	
+condiciones (==, >=, <=, <, >)
+*/
+
 /*deleting and storing memory as it is required by the program, when i declare a variable it is stored randomly 
 punteros y dirección, cada espacio de la memoria tiene una dirección, es posible referenciar la variable con esa dirección
 cada slot tiene dirección propia, si bien es aleatorio el slot, depende del tamaño de la variable -- -- -- 
@@ -30,3 +44,22 @@ int main (){
 
     return 0;
 }
+
+//data_type *pointer_name, int *ptr, char *ptr, float *ptr
+//if we want to access the value contained in a pointer we can do the following 
+/* 
+    int x = 5;                                          
+   int *ptr;
+   ptr = &x;    
+   printf("%d", *ptr);
+   [OUTPUT: 5]
+
+if we want to change value stored by using this function, we can do the following:
+int x = 10;
+int *ptr = &x;
+
+*ptr = 4; ///here we are changing the value contained in the direction pointed 
+
+
+NEVER APPLY THE INDIRECTION OPERATOR TO THE UNINITIALIZED POINTER (WITHOUT ASSIGNING IT A SPECIFIC VARIABLE (POINTER))
+   */
