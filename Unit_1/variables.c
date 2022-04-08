@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 #include "sum.h"
 
 //datatype integer, flotantes, string(cadenas de texto), caracteres
