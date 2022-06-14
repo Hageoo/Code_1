@@ -1,37 +1,29 @@
-# we take the dimension of the matrix from the user, since we are able to work with 2x2 matrixes of 3x3 matrixes
+#I will be using a context manager just to prevent any leaks, it is also considered best practice when it comes to working with files 
+with open('/mnt/d/UPY/Code_1/prog/notes.txt', 'r') as f:
+    filecontent = f.read()
+    print(filecontent)
+#since the context manager takes care of opening and closing the file for us, it also considered best practice
+    f.seek(0) #f.seek pretty much just returns to the beginning of the text in the file
+    def lineT():
+        linenum = 0
+        for line in f:  #we iterate through each line contained in the file 
+            if line[0] not in 'T': #our conditional statement to count the # of lines that do not have "T" as the first character 
+                #the "[0]" is there to check the character contained in the string in the position 0
+                linenum += 1
+        print("\nLines that do not start with T =", linenum) #we print the result
+    lineT()
 
-dimension = int(input(""""Pick the dimension of your matrix
-1. 2x2
-2. 3x3
-"""))
-# once we have the dimension, we filter it with an if and elif, depending on the user´s choice
+    def words():
+        words = filecontent.split() #doing this specific function got kinda tricky so I stole the idea of counting the blank spaces :)
+        print("Total amount of words: ", len(words)) #len is useful since it provides the total number of elements
+    words()
 
-if dimension == 1:
-    print("Please type in 4 values (it is only allowed 2x2 matrixes)")
-    a11 = int(input("Enter the first value: "))
-    a12 = int(input("Enter the second value: "))
-    a21 = int(input("Enter the third value: "))
-    a22 = int(input("Enter the fourth value: "))
+    def the():
+        string = filecontent  #here I take the whole text as a string so then I can look for substrings 
+        substring = "the" #defining the substring 
+        substring2 = "The" #due to the fact that it was not considering the variations on the letter case I came up with this "solution" prolly not the most efficient tho
+        count = string.count(substring) #we count the substrings contained in the main string 
+        count2 = string.count(substring2)
 
-# to work with a 2x2 matrix we take the values from the user and then proceed to use the formula for the determinant 
-
-    determinant = (a11*a22) - (a21*a12)
-    print(determinant) # we print the result 
-    
-# in case the dimension is 3x3 we do run the following instructions
-elif dimension == 2:
-    print("Please type in your 9 values") # we take the values for the matrix
-    a1 = int(input("Enter the first value: "))
-    a2 = int(input("Enter the second value: "))
-    a3 = int(input("Enter the third value: "))
-    b1 = int(input("Enter the fourth value: "))
-    b2 = int(input("Enter the fifth value: "))
-    b3 = int(input("Enter the sixth value: "))
-    c1 = int(input("Enter the seventh value: "))
-    c2 = int(input("Enter the eighth value: "))
-    c3 = int(input("Enter the nineth value: "))
-    
-    # once we have the values to work with we can use the formula for the determinant of a 3x3 matrix
-    
-    determinant3 = (((a1) * ((b2 * c3) - (b3 * c2))) - ((a2) * ((b1 * c3) - (b3 * c1))) + ((a3) * ((b1 * c2) - (b2 * c1))))
-    print(determinant3) # we print the result
+        print("Total 'the' in file: ", count + count2) #we add both values and print the result
+    the()

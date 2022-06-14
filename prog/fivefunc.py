@@ -1,9 +1,8 @@
 #I will be using a context manager just to prevent any leaks, it is also considered best practice when it comes to working with files 
-#since the context manager takes care of opening and closing the file for us
 with open('/mnt/d/UPY/Code_1/prog/notes.txt', 'r') as f:
     filecontent = f.read()
     print(filecontent)
-  
+#since the context manager takes care of opening and closing the file for us, it also considered best practice
     f.seek(0)
     def lineT():
         linenum = 0
@@ -21,23 +20,9 @@ with open('/mnt/d/UPY/Code_1/prog/notes.txt', 'r') as f:
     def the():
         string = filecontent
         substring = "the"
+        substring2 = "The"
         count = string.count(substring)
-        
-        string = filecontent
-        substring = "The"
-        counThe = string.count(substring)
-        
-        print("Total 'the' in file: ", count + counThe)
+        count2 = string.count(substring2)
+
+        print("Total 'the' in file: ", count + count2)
     the()
-
-
-
-
-
-
-
-
-
-
-    
-    
